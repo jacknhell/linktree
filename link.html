@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarabi Decoration</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #ffffff; /* Dark grey background */
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding-bottom: 60px; /* Space for footer */
+        }
+
+        /* Top Navigation Icons */
+        .top-nav {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .top-nav .icon-btn {
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(63, 58, 58);
+            text-decoration: none;
+            font-size: 1.1rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Main Container */
+        .container {
+            width: 100%;
+            max-width: 480px; /* Mobile width constraint */
+            padding: 80px 20px 20px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        .logo {
+            max-width: 220px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .profile-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-bio {
+            font-size: 0.8rem;
+            color: #2c2525;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+
+        /* Link Buttons */
+        .links-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-item {
+            background-color: rgb(104, 99, 99);
+            color: #111;
+            display: flex;
+            align-items: center;
+            padding: 16px 12px;
+            text-decoration: none;
+            border-radius: 4px; /* Slight rounding, looks square but softer */
+            position: relative;
+            transition: transform 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .link-item:active {
+            transform: scale(0.98);
+        }
+
+        /* Left Icon */
+        .link-icon {
+            width: 30px;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: center;
+            color: #e9e50e;
+        }
+
+        /* Center Text */
+        .link-content {
+            flex-grow: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .link-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #e9d30b;
+        }
+
+        .link-subtitle {
+            font-size: 0.65rem;
+            color: #e7e40c;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+        }
+
+        /* Right Menu Dots */
+        .menu-dots {
+            width: 30px;
+            display: flex;
+            justify-content: flex-end;
+            color: #e0e40b;
+            font-size: 1rem;
+        }
+
+        /* Specific Icon Colors (Optional) */
+        .fa-instagram, .fa-pinterest, .fa-facebook, .fa-linkedin, .fa-snapchat, .fa-tiktok, .fa-youtube {
+            color: #d8c309; /* Keeping them black to match image */
+        }
+
+        /* Footer Social Icons */
+        .footer-socials {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #7d7d7d; /* Matches body */
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.5rem;
+            z-index: 100;
+        }
+
+        .footer-socials a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-socials a:hover {
+            opacity: 0.8;
+        }
+
+        /* Placeholder for custom logo */
+        .logo-placeholder {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+            border: 2px solid #fff;
+        }
+        .logo-placeholder i {
+            font-size: 3rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+        <!-- Top Navigation -->
+    
+    <div class="container">
+        
+              <!-- Profile Header -->
+        <div class="profile-section">
+            <!-- Your logo image -->
+            <img src="https://www.alarabidecor.com/assets/logo-wordmark.png" alt="Alarabi Decoration Logo" class="logo">
+            
+            <h1 class="profile-name">Alarabi Decoration</h1>
+            <p class="profile-bio">over 40 years of experience.<br>اكثر من 40 عاما من الخبرة.</p>
+        </div>
+
+        <!-- Links List -->
+        <div class="links-list">
+
+                        <!-- Instagram -->
+            <a href="https://www.instagram.com/alarabi_decoration/" target="_blank" class="link-item">
+                <div class="link-icon"><i class="fa-brands fa-instagram"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Instagram</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- Pinterest -->
+            <a href="https://ph.pinterest.com/alarabi_decoration/" target="_blank" class="link-item">
+                <div class="link-icon"><i class="fa-brands fa-pinterest"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Pinterest</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/AlarabiDecorationAndConstructionCo.Ltd/" target="_blank" class="link-item">
+                <div class="link-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Facebook</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/company/alarabi-decoration/" target="_blank" class="link-item">
+                <div class="link-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Linkedin</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- Snapchat -->
+            <a href="https://www.snapchat.com/@alarabidecor" target="_blank" class="link-item">
+                <div class="link-icon"><i class="fa-brands fa-snapchat-ghost"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Snapchat</span>
+                    <span class="link-subtitle"><i class="fa-solid fa-ghost"></i> @alarabidecor</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/@alarabi_dec" target="_blank" class="link-item">
+                <div class="link-icon"><i class="fa-brands fa-tiktok"></i></div>
+                <div class="link-content">
+                    <span class="link-title">TikTok</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- Youtube -->
+            <a href="https://www.youtube.com/@alarabidecoration6554" target="_blank" class="link-item">
+                <div class="link-icon"><i class="fa-brands fa-youtube"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Youtube</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- Marketing Email -->
+            <a href="mailto:marketing@alarabidecor.com" class="link-item">
+                <div class="link-icon"><i class="fa-regular fa-envelope"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Marketing</span>
+                    <span class="link-subtitle"><i class="fa-regular fa-envelope"></i> Email - marketing@alarabidecor.com</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- Jeddah Location -->
+            <a href="https://maps.app.goo.gl/YqKe95MJsVAYhA818" target="_blank" class="link-item">
+                <div class="link-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Jeddah Location</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- Riyadh Location -->
+            <a href="https://maps.app.goo.gl/GaucQi7N4TPbqPni7" target="_blank" class="link-item">
+                <div class="link-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Riyadh Location</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- Email Us -->
+            <a href="mailto:info@alarabidecor.com" class="link-item">
+                <div class="link-icon"><i class="fa-solid fa-address-card"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Email us</span>
+                    <span class="link-subtitle"><i class="fa-regular fa-envelope"></i> Email - info@alarabidecor.com</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+            <!-- Website -->
+            <a href="https://www.alarabidecor.com/" target="_blank" class="link-item">
+                <div class="link-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                <div class="link-content">
+                    <span class="link-title">Website</span>
+                </div>
+                <div class="menu-dots"><i class="fa-solid fa-ellipsis-vertical"></i></div>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- Footer Social Icons -->
+    <div class="footer-socials">
+        <a href="https://www.facebook.com/AlarabiDecorationAndConstructionCo.Ltd/"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.snapchat.com/@alarabidecor"><i class="fa-brands fa-snapchat"></i></a>
+        <a href="https://www.tiktok.com/@alarabi_dec"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/alarabi_decoration/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/alarabi-decoration/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/@alarabidecoration6554"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/company/alarabi-decoration/"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <!-- Script for Share Button -->
+    
+</body>
+</html>
